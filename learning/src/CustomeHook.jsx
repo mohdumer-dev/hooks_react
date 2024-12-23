@@ -2,27 +2,32 @@ import React, { useEffect, useRef, useState } from 'react'
 import './index.css'
 
 const CustomeHook = () => {
+    {/* usefetch */}
     //     const[currentpost,setCurrentpost]=useState(1)
     //    const {loading,post} =useFetch(`https://jsonplaceholder.typicode.com/todos/${currentpost}`)
 
     //    if(loading){
     //     return <Loading/>
     //    }
-    const [number, setnumber] = useState(0)
-    const prev = usePrev(number)
-    console.log(number)
+    // const [number, setnumber] = useState(0)
+    // const prev = usePrev(number)
+    // console.log(number)
     return <>
+    {/* usefetch */}
         {/* <button onClick={()=>{ setCurrentpost(1)}}>1</button>
  <button onClick={()=>{ setCurrentpost(2)}}>2</button>
  <button onClick={()=>{ setCurrentpost(3)}}>3</button>
  <br/>
  <br/>
  {JSON.stringify(post)} */}
-        <button onClick={() => { setnumber(number + 1) }}>Click Me</button>
+{/* use prev */}
+        {/* <button onClick={() => { setnumber(number + 1) }}>Click Me</button>
         <br />
         {number}
         <br />
-        <span>The previous number is {prev}</span>
+        <span>The previous number is {prev}</span> */}
+
+        {/* //use Debounce */}
 
     </>
 }
