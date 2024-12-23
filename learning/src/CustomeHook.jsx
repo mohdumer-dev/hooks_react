@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import './index.css'
 
 const CustomeHook = () => {
-    {/* usefetch */}
+    {/* usefetch */ }
     //     const[currentpost,setCurrentpost]=useState(1)
     //    const {loading,post} =useFetch(`https://jsonplaceholder.typicode.com/todos/${currentpost}`)
 
@@ -12,15 +12,18 @@ const CustomeHook = () => {
     // const [number, setnumber] = useState(0)
     // const prev = usePrev(number)
     // console.log(number)
+
+    const debounce=useDebounce(backend)
+
     return <>
-    {/* usefetch */}
+        {/* usefetch */}
         {/* <button onClick={()=>{ setCurrentpost(1)}}>1</button>
  <button onClick={()=>{ setCurrentpost(2)}}>2</button>
  <button onClick={()=>{ setCurrentpost(3)}}>3</button>
  <br/>
  <br/>
  {JSON.stringify(post)} */}
-{/* use prev */}
+        {/* use prev */}
         {/* <button onClick={() => { setnumber(number + 1) }}>Click Me</button>
         <br />
         {number}
@@ -29,7 +32,23 @@ const CustomeHook = () => {
 
         {/* //use Debounce */}
 
+<input type="text" onChange={debounce} />
+
     </>
+}
+
+function useDebounce(orginalfn) {
+    const Timer = useRef()
+    function fn (){
+        clearTimeout(Timer.current)
+        Timer.current = setTimeout(orginalfn, 800)
+    }
+   
+    return fn
+}
+
+function backend() {
+    fetch('api.amazon.com/1')
 }
 
 function usePrev(value) {
